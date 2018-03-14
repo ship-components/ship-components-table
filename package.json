@@ -1,0 +1,115 @@
+{
+  "name": "ship-components-table",
+  "version": "0.1.0",
+  "description": "A table with sorting and multi-selection.",
+  "main": "src/Table.js",
+  "scripts": {
+    "start": "grunt server",
+    "lint": "./node_modules/eslint/bin/eslint.js src/",
+    "test": "npm run lint && jest --coverage",
+    "test:update": "npm run test -- -u",
+    "test:watchAll": "npm run test -- --watchAll",
+    "watch:test": "jest --coverage --watch",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js -v",
+    "build": "npm test && grunt clean && grunt build",
+    "travis": "npm install trevor && trevor"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ship-components/ship-components-table.git"
+  },
+  "engines": {
+    "node": ">=6.0 <9.0"
+  },
+  "keywords": [
+    "react",
+    "es2015",
+    "es2016",
+    "es2017",
+    "javascript",
+    "javascript-library",
+    "grunt",
+    "webpack",
+    "jest"
+  ],
+  "author": "Chris Orescan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ship-components/ship-components-table/issues"
+  },
+  "homepage": "git+https://github.com/ship-components/ship-components-table#readme",
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "classnames": "^2.2.5",
+    "immutable": "^3.8.1",
+    "moment": "^2.21.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "ship-components-icon": "^0.1.2",
+    "ship-components-outsideclick": "^1.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "coveralls": "^2.13.1",
+    "css-loader": "^0.28.4",
+    "enzyme": "^2.9.1",
+    "enzyme-to-json": "^1.5.1",
+    "eslint": "^4.1.1",
+    "eslint-config-ship-components": "^1.4.2",
+    "eslint-loader": "^1.8.0",
+    "eslint-plugin-react": "^7.3.0",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-coveralls": "^1.0.1",
+    "grunt-eslint": "^20.0.0",
+    "grunt-webpack": "^3.0.0",
+    "jest": "^20.0.4",
+    "jest-css-modules": "^1.1.0",
+    "package-banner": "^0.1.1",
+    "postcss-calc": "^5.3.1",
+    "postcss-color-function": "^4.0.0",
+    "postcss-color-hex-alpha": "^3.0.0",
+    "postcss-loader": "^2.0.6",
+    "postcss-nested": "^2.0.2",
+    "postcss-simple-vars": "^4.0.0",
+    "prop-types": "^15.5.10",
+    "react-addons-test-utils": "^15.6.0",
+    "react-test-renderer": "^15.6.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.2.0",
+    "webpack-dev-server": "^2.5.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.css$": "<rootDir>/node_modules/jest-css-modules"
+    },
+    "moduleNameMapper": {
+      "\\.(css)$": "<rootDir>/node_modules/jest-css-modules"
+    },
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/classnames",
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/fbjs",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils"
+    ],
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!ship-components-*)"
+    ]
+  },
+  "babelJest": {
+    "include": [
+      "src/**/*.@(js|jsx|es6)",
+      "<rootDir>/node_modules"
+    ]
+  }
+}

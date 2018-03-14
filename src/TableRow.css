@@ -1,0 +1,32 @@
+.row {
+	display: table-row;
+  padding: 12px 0 12px 16px;
+	cursor: default;
+  font-size: 13px;
+	&:hover:not(.selected) {
+		background-color: #e0e0e0;
+	}
+}
+
+.cell {
+	display: table-cell;
+	padding: 12px 16px 12px 16px;
+	font-weight: 300;
+	box-sizing: border-box;
+	padding-right: 8px;
+	color: #616161;
+	user-select: none;
+	border-bottom: 1px solid #bdbdbd;
+}
+.cell.name,
+.cell.title {
+	font-weight: 400;
+}
+
+.selected {
+  background-color: #4285f4;
+	.cell {
+		color: #ffffff;
+		border-bottom: 1px solid #4285f4;
+	}
+}

@@ -1,0 +1,36 @@
+.container {
+	display: table;
+	width: 100%;
+	background-color: #fff;
+	overflow: hidden;
+	color: #212121;
+	&.hidden {
+		height: 0;
+	}
+}
+
+.head {
+	display: table-header-group;
+	color: #616161;
+	margin: 0;
+	list-style: none;
+}
+
+.body {
+	display: table-row-group;
+	list-style: none;
+	margin: 0;
+}
+
+.headCell {
+	display: table-cell;
+	box-sizing: border-box;
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: 700;
+	padding: 16px 16px 16px 16px;
+}
+
+.hidden {
+	visibility: hidden;
+}

@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ship-components-table Table rendering renders correctly 1`] = `
+<OutsideClick
+  className=""
+  onClick={[Function]}
+  tag="div"
+>
+  <ul>
+    <li
+      className=""
+      onClick={[Function]}
+    >
+      Name
+      <span
+        className=""
+      />
+    </li>
+    <li
+      className=""
+      onClick={[Function]}
+    >
+      Description
+      <span
+        className=""
+      />
+    </li>
+    <li
+      className=""
+      onClick={[Function]}
+    >
+      Created
+      <span
+        className=""
+      />
+    </li>
+  </ul>
+  <ul>
+    <DataViewRow
+      columns={
+        Immutable.OrderedMap {
+          name: Object {
+            "label": "Name",
+            "sort": "string",
+          },
+          description: Object {
+            "label": "Description",
+          },
+          created: Object {
+            "label": "Created",
+            "sort": "date",
+          },
+        }
+      }
+      onClick={[Function]}
+      row={
+        Object {
+          "created": "12-01-1970",
+          "description": "This is the first item.",
+          "key": 1,
+          "name": "Item 1",
+        }
+      }
+      rowIndex={0}
+      selected={false}
+    />
+    <DataViewRow
+      columns={
+        Immutable.OrderedMap {
+          name: Object {
+            "label": "Name",
+            "sort": "string",
+          },
+          description: Object {
+            "label": "Description",
+          },
+          created: Object {
+            "label": "Created",
+            "sort": "date",
+          },
+        }
+      }
+      onClick={[Function]}
+      row={
+        Object {
+          "created": "02-20-1997",
+          "description": "This is the second item",
+          "key": 2,
+          "name": "Item 2",
+        }
+      }
+      rowIndex={1}
+      selected={false}
+    />
+    <DataViewRow
+      columns={
+        Immutable.OrderedMap {
+          name: Object {
+            "label": "Name",
+            "sort": "string",
+          },
+          description: Object {
+            "label": "Description",
+          },
+          created: Object {
+            "label": "Created",
+            "sort": "date",
+          },
+        }
+      }
+      onClick={[Function]}
+      row={
+        Object {
+          "created": "01-01-2018",
+          "description": "This is the third item",
+          "key": 3,
+          "name": "Item 3",
+        }
+      }
+      rowIndex={2}
+      selected={false}
+    />
+    <DataViewRow
+      columns={
+        Immutable.OrderedMap {
+          name: Object {
+            "label": "Name",
+            "sort": "string",
+          },
+          description: Object {
+            "label": "Description",
+          },
+          created: Object {
+            "label": "Created",
+            "sort": "date",
+          },
+        }
+      }
+      onClick={[Function]}
+      row={
+        Object {
+          "created": "01-16-1989",
+          "description": "This is the fourth item",
+          "key": 4,
+          "name": "Item 4",
+        }
+      }
+      rowIndex={3}
+      selected={false}
+    />
+    <DataViewRow
+      columns={
+        Immutable.OrderedMap {
+          name: Object {
+            "label": "Name",
+            "sort": "string",
+          },
+          description: Object {
+            "label": "Description",
+          },
+          created: Object {
+            "label": "Created",
+            "sort": "date",
+          },
+        }
+      }
+      onClick={[Function]}
+      row={
+        Object {
+          "created": "01-01-1984",
+          "description": "This is the fifth item",
+          "key": 5,
+          "name": "Item 5",
+        }
+      }
+      rowIndex={4}
+      selected={false}
+    />
+    <DataViewRow
+      columns={
+        Immutable.OrderedMap {
+          name: Object {
+            "label": "Name",
+            "sort": "string",
+          },
+          description: Object {
+            "label": "Description",
+          },
+          created: Object {
+            "label": "Created",
+            "sort": "date",
+          },
+        }
+      }
+      onClick={[Function]}
+      row={
+        Object {
+          "created": "03-14-1985",
+          "description": "This is the sixth item",
+          "key": 6,
+          "name": "Item 6",
+        }
+      }
+      rowIndex={5}
+      selected={false}
+    />
+  </ul>
+</OutsideClick>
+`;
