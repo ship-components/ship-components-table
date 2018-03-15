@@ -19,7 +19,6 @@ module.exports = {
   externals: {
     classnames: true,
     react: 'React',
-    'react-dom': true,
     'ship-components-outsideclick': true,
     'ship-components-icon': true,
     'react-addons-css-transition-group': true

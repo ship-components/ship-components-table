@@ -81,7 +81,6 @@ module.exports = function(grunt) {
     devtool: 'eval',
     externals: {
       react: 'React',
-      'react-dom': 'ReactDOM',
       'react-addons-css-transition-group': 'React.addons.CSSTransitionGroup'
     }
   });
