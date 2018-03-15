@@ -59,7 +59,9 @@ export default class Table extends React.Component {
     this.setState({
       selection: this.state.selection.clear()
     }, () => {
-      this.props.onSelect(this.state.selection, event);
+      if (typeof this.props.onSelect === 'function') {
+        this.props.onSelect(this.state.selection, event);
+      }
     });
   }
 
