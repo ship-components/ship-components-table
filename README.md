@@ -1,4 +1,4 @@
-# ship-components-select
+# ship-components-table
 [React](http://facebook.github.io/react/) table that is sortable and multi-selectable. Exports a commonjs module that can be used with [webpack](http://webpack.github.io/). Source is in ES6 and is compiled down to ES5 using [Babel](https://babeljs.io/).
 
 [![npm](https://img.shields.io/npm/v/ship-components-table.svg)](https://www.npmjs.com/package/ship-components-table)
@@ -180,13 +180,14 @@ Below are is a sample of how to setup the loaders:
 2. `npm test`
 
 ## History
+* 0.2.0 - Added support for value prop. Removed default OutsideClick behavior (deselect all). Added onBlur support.
 * 0.1.1 - Bugfix for OutsideClick
 * 0.1.0 - Initial
 
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2015 Isaac Suttell
+Copyright (c) 2018 Chris Orescan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
