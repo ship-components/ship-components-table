@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { List, OrderedMap , is} from 'immutable';
+import { List, OrderedMap , Seq, is} from 'immutable';
 import moment from 'moment';
 import classNames from 'classnames';
 
@@ -9,7 +9,6 @@ import OutsideClick from 'ship-components-outsideclick';
 
 import TableRow from './TableRow';
 import css from './Table.css';
-
 
 function comparePrimitives(a, b) {
   return a > b ? 1 : -1;
@@ -37,13 +36,21 @@ export default class Table extends React.Component {
     super(props);
 
     this.state = {
-      selection: new OrderedMap(),
+      selection: this.getSelection(props),
       sortBy: props.defaultSort
     };
 
+    this.clear = this.clear.bind(this);
     this.handleRowClick = this.handleRowClick.bind(this);
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
     this.getSortedData = this.getSortedData.bind(this);
+    this.getSelection = this.getSelection.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      selection: this.getSelection(nextProps)
+    });
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -51,17 +58,43 @@ export default class Table extends React.Component {
       !Object.is(this.state.sortBy, nextState.sortBy) ||
       !is(this.props.data, nextProps.data) ||
       !is(this.props.columns, nextProps.columns) ||
+      !is(this.props.value, nextProps.value) ||
       this.props.className !== nextProps.className;
   }
 
-  handleOutsideClick(event) {
+  getSelection(props = this.props) {
+    if (!props.value) {
+      return this.state && this.state.selection || new OrderedMap();
+    }
+    let selection = new OrderedMap();
+    selection = selection.withMutations((sel) => {
+      // map props.value keys to props.data objects
+      props.value.forEach((key) => {
+        const row = props.data.find(o => o.key === key);
+        if (row) {
+          sel = sel.set(key, row);
+        }
+      });
+    });
+    return selection;
+  }
+
+  /**
+   * Mimic 'blur' behavior using OutsideClick
+   * @param {Event} event
+   */
+  handleBlur(event) {
+    if (typeof this.props.onBlur === 'function') {
+      this.props.onBlur(event);
+    }
+  }
+
+  clear(event) {
     // deselect all
     this.setState({
       selection: this.state.selection.clear()
     }, () => {
-      if (typeof this.props.onSelect === 'function') {
-        this.props.onSelect(this.state.selection, event);
-      }
+      this.props.onSelect(this.state.selection, event);
     });
   }
 
@@ -196,6 +229,10 @@ export default class Table extends React.Component {
     this.setState({
       sortBy: sortBy,
       selection: this.state.selection.clear()
+    }, () => {
+      if (typeof this.props.onSelect === 'function') {
+        this.props.onSelect(this.state.selection);
+      }
     });
   }
 
@@ -269,9 +306,8 @@ export default class Table extends React.Component {
     return (
       <OutsideClick
         className={classNames(this.props.className, css.container)}
-        onClick={this.handleOutsideClick}
+        onClick={this.handleBlur}
       >
-
         <ul className={css.head}>
           {columnKeys.map((key) => {
             const column = this.props.columns.get(key);
@@ -309,14 +345,16 @@ export default class Table extends React.Component {
 
 Table.defaultProps = {
   className: '',
-  data: new List(),
   columns: new OrderedMap(),
+  data: new List(),
+  value: void 0,
   selectable: true,
   defaultSort: {
     column: void 0,
     ascending: true
   },
   onSelect: void 0,
+  onBlur: void 0,
   dataExtractor: void 0
 };
 
@@ -324,11 +362,13 @@ Table.propTypes = {
   className: PropTypes.string,
   columns: PropTypes.instanceOf(OrderedMap).isRequired,
   data: PropTypes.instanceOf(List).isRequired,
+  value: PropTypes.instanceOf(Seq.Indexed),
   dataExtractor: PropTypes.func,
   defaultSort: PropTypes.shape({
     column: PropTypes.string,
     ascending: PropTypes.bool
   }),
   selectable: PropTypes.bool,
-  onSelect: PropTypes.func
+  onSelect: PropTypes.func,
+  onBlur: PropTypes.func
 };
