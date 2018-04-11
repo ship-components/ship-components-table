@@ -45,6 +45,7 @@ export default class Table extends React.Component {
     this.handleBlur = this.handleBlur.bind(this);
     this.getSortedData = this.getSortedData.bind(this);
     this.getSelection = this.getSelection.bind(this);
+    this.handleDoubleClick = this.handleDoubleClick.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -301,10 +302,28 @@ export default class Table extends React.Component {
     return data;
   }
 
+  /**
+   * Find a table row in the path of a doubleclick
+   */
+  handleDoubleClick(event) {
+    let target = event.target;
+    let rowKey = event.target.dataset.rowKey;
+    while (!rowKey && target !== this.refs.container) {
+      target = target.parentNode;
+      rowKey = target.dataset.rowKey;
+    }
+
+    if (rowKey && typeof this.props.onDoubleClick === 'function') {
+      const row = this.props.data.find(o => o.key.toString() === rowKey);
+      this.props.onDoubleClick(row, event);
+    }
+  }
+
   render() {
     let columnKeys = this.props.columns.keySeq();
     return (
       <OutsideClick
+        ref={'container'}
         className={classNames(this.props.className, css.container)}
         onClick={this.handleBlur}
       >
@@ -326,7 +345,10 @@ export default class Table extends React.Component {
           }
         </ul>
 
-        <ul className={css.body}>
+        <ul
+          className={css.body}
+          onDoubleClick={this.handleDoubleClick}
+        >
           {this.getSortedData().map((row, index) => (
             <TableRow
               key={row.key}
