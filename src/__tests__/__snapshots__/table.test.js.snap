@@ -35,7 +35,9 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
       />
     </li>
   </ul>
-  <ul>
+  <ul
+    onDoubleClick={[Function]}
+  >
     <DataViewRow
       columns={
         Immutable.OrderedMap {
