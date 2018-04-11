@@ -13,6 +13,7 @@ export default function DataViewRow(props) {
   };
   return (
     <li
+      data-row-key={row.key}
       className={classNames(css.row,{[css.selected]:props.selected})}
       onClick={handleClick}
     >
