@@ -231,6 +231,9 @@ export default class Table extends React.Component {
       sortBy: sortBy,
       selection: this.state.selection.clear()
     }, () => {
+      if (typeof this.props.onSort === 'function') {
+        this.props.onSort(this.state.sortBy);
+      }
       if (typeof this.props.onSelect === 'function') {
         this.props.onSelect(this.state.selection);
       }
@@ -376,6 +379,7 @@ Table.defaultProps = {
     ascending: true
   },
   onSelect: void 0,
+  onSort: void 0,
   onBlur: void 0,
   dataExtractor: void 0
 };
@@ -392,5 +396,6 @@ Table.propTypes = {
   }),
   selectable: PropTypes.bool,
   onSelect: PropTypes.func,
+  onSort: PropTypes.func,
   onBlur: PropTypes.func
 };
