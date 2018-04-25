@@ -95,7 +95,7 @@ describe('ship-components-table', () => {
   });
 
   describe('selecting rows', () => {
-    it('calls parent\'s select handler when rows are selected', () => {
+    it('exposes onSelect for when rows are selected', () => {
       const handleSelect = jest.fn();
       const wrapper = mountTable({
         onSelect: handleSelect
@@ -108,6 +108,17 @@ describe('ship-components-table', () => {
 
       wrapper.node.handleRowClick(selectedRow, rowIndex, isSelected, mockEvent);
       expect(handleSelect.mock.calls.length).toBe(1);
+    });
+
+    it('exposes onSort', () => {
+      const handleSort = jest.fn();
+      const wrapper = mountTable({
+        onSort: handleSort
+      });
+
+      wrapper.node.handleSort('name');
+      const sortParam = { column: 'name', ascending: true };
+      expect(handleSort.mock.calls[0][0]).toMatchObject(sortParam);
     });
 
     it('can determine if a row is selected', () => {
