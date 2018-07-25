@@ -9,6 +9,7 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
   <ul>
     <li
       className=""
+      key="name"
       onClick={[Function]}
     >
       Name
@@ -18,6 +19,7 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
     </li>
     <li
       className=""
+      key="description"
       onClick={[Function]}
     >
       Description
@@ -27,6 +29,7 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
     </li>
     <li
       className=""
+      key="created"
       onClick={[Function]}
     >
       Created
@@ -54,6 +57,7 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      key="1"
       onClick={[Function]}
       row={
         Object {
@@ -82,6 +86,7 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      key="2"
       onClick={[Function]}
       row={
         Object {
@@ -110,6 +115,7 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      key="3"
       onClick={[Function]}
       row={
         Object {
@@ -138,6 +144,7 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      key="4"
       onClick={[Function]}
       row={
         Object {
@@ -166,6 +173,7 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      key="5"
       onClick={[Function]}
       row={
         Object {
@@ -194,6 +202,7 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      key="6"
       onClick={[Function]}
       row={
         Object {
