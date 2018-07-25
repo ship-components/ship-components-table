@@ -247,10 +247,12 @@ export default class Table extends React.Component {
   getSortedData() {
     const columnKey = this.state.sortBy.column;
     if (!columnKey || !(this.props.columns.get(columnKey) && this.props.columns.get(columnKey).sort)) {
+      // if there is no sort specified for the column corresponding to columnKey, return unsorted data.
       return this.extractData();
     }
     const columnSort = this.props.columns.get(columnKey).sort;
-    const compare = typeof columnSort === 'function' ? columnSort : SortFunctions[this.props.columns.get(columnKey).sort];
+    const useCustomSort = typeof columnSort === 'function';
+    const compare = useCustomSort ? columnSort : SortFunctions[columnSort];
     if (typeof compare !== 'function') {
       console.error('ship-components-table sorting requires a function.');
       return this.extractData();
@@ -261,6 +263,11 @@ export default class Table extends React.Component {
         a = b;
         b = tmp;
       }
+      if (useCustomSort) {
+        // for custom comparisons, pass the whole object to the programmer.
+        return compare(a,b);
+      }
+      // for default comparison, pass in target column data.
       return compare(a[columnKey], b[columnKey]);
     });
     return data;
