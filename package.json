@@ -1,6 +1,6 @@
 {
   "name": "ship-components-table",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A table with sorting and multi-selection.",
   "main": "src/Table.js",
   "scripts": {
@@ -43,7 +43,7 @@
     "classnames": "^2.2.5",
     "immutable": "^3.8.1",
     "moment": "^2.21.0",
-    "react": "^15.6.1",
+    "react": "^16.4.1",
     "ship-components-icon": "^0.1.2",
     "ship-components-outsideclick": "^1.0.0"
   },
@@ -57,8 +57,9 @@
     "babel-preset-react": "^6.24.1",
     "coveralls": "^2.13.1",
     "css-loader": "^0.28.4",
-    "enzyme": "^2.9.1",
-    "enzyme-to-json": "^1.5.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^4.1.1",
     "eslint-config-ship-components": "^1.4.2",
     "eslint-loader": "^1.8.0",
@@ -80,14 +81,18 @@
     "postcss-nested": "^2.0.2",
     "postcss-simple-vars": "^4.0.0",
     "prop-types": "^15.5.10",
-    "react-addons-test-utils": "^15.6.0",
-    "react-dom": "^15.6.2",
-    "react-test-renderer": "^15.6.1",
+    "raf": "^3.4.0",
+    "react-dom": "^16.4.1",
+    "react-test-renderer": "^16.4.1",
     "style-loader": "^0.18.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.5.0"
   },
   "jest": {
+    "setupFiles": [
+      "raf/polyfill",
+      "./jest-setup.js"
+    ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest",
       "^.+\\.css$": "<rootDir>/node_modules/jest-css-modules"
@@ -98,7 +103,6 @@
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/classnames",
       "<rootDir>/node_modules/react",
-      "<rootDir>/node_modules/fbjs",
       "<rootDir>/node_modules/react-dom",
       "<rootDir>/node_modules/react-addons-test-utils"
     ],

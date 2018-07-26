@@ -24,9 +24,9 @@
 }
 
 .selected {
-  background-color: #4285f4;
+  background-color: $primary-color;
 	.cell {
 		color: #ffffff;
-		border-bottom: 1px solid #4285f4;
+		border-bottom: 1px solid $primary-color;
 	}
 }
