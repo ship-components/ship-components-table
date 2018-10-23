@@ -106,7 +106,7 @@ describe('ship-components-table', () => {
       const isSelected = false;
       const mockEvent = {};
 
-      wrapper.node.handleRowClick(selectedRow, rowIndex, isSelected, mockEvent);
+      wrapper.instance().handleRowClick(selectedRow, rowIndex, isSelected, mockEvent);
       expect(handleSelect.mock.calls.length).toBe(1);
     });
 
@@ -116,7 +116,7 @@ describe('ship-components-table', () => {
         onSort: handleSort
       });
 
-      wrapper.node.handleSort('name');
+      wrapper.instance().handleSort('name');
       const sortParam = { column: 'name', ascending: true };
       expect(handleSort.mock.calls[0][0]).toMatchObject(sortParam);
     });
@@ -129,9 +129,9 @@ describe('ship-components-table', () => {
       const isSelected = false;
       const mockEvent = {};
 
-      wrapper.node.handleRowClick(selectedRow, rowIndex, isSelected, mockEvent);
-      expect(wrapper.node.isSelected(selectedRow)).toBe(true);
-      expect(wrapper.node.isSelected(nonSelectedRow)).toBe(false);
+      wrapper.instance().handleRowClick(selectedRow, rowIndex, isSelected, mockEvent);
+      expect(wrapper.instance().isSelected(selectedRow)).toBe(true);
+      expect(wrapper.instance().isSelected(nonSelectedRow)).toBe(false);
     });
   });
 
@@ -146,7 +146,7 @@ describe('ship-components-table', () => {
 
       const latestDate = SAMPLE_DATA.get(2);
       const earliestDate = SAMPLE_DATA.get(0);
-      const data = wrapper.node.getSortedData();
+      const data = wrapper.instance().getSortedData();
       expect(data.first().key).toEqual(latestDate.key);
       expect(data.last().key).toEqual(earliestDate.key);
     });
