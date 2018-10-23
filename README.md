@@ -5,7 +5,7 @@
 [![Build Status](http://img.shields.io/travis/ship-components/ship-components-table/master.svg?style=flat)](https://travis-ci.org/ship-components/ship-components-table)
 [![Coverage](http://img.shields.io/coveralls/ship-components/ship-components-table.svg?style=flat)](https://coveralls.io/github/ship-components/ship-components-table)
 [![dependencies](https://img.shields.io/david/ship-components/ship-components-table.svg?style=flat)](https://david-dm.org/ship-components/ship-components-table)
-[![devDependencies](https://img.shields.io/david/dev/ship-components/ship-components-table.svg?style=flat)](https://david-dm.org/ship-components/ship-components-table?type=dev) [![Greenkeeper badge](https://badges.greenkeeper.io/ship-components/ship-components-table.svg)](https://greenkeeper.io/)
+[![devDependencies](https://img.shields.io/david/dev/ship-components/ship-components-table.svg?style=flat)](https://david-dm.org/ship-components/ship-components-table?type=dev)
 
 ## Usage
 
