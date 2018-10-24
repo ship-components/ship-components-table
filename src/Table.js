@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { List, OrderedMap , Seq, is} from 'immutable';
+import { List, OrderedMap, Seq, is } from 'immutable';
 import moment from 'moment';
 import classNames from 'classnames';
 
@@ -19,7 +19,7 @@ function compareStrings(a, b, ignoreCase = true) {
     a = a.toLowerCase();
     b = b.toLowerCase();
   }
-  return comparePrimitives(a,b);
+  return comparePrimitives(a, b);
 }
 
 const SortFunctions = {
@@ -45,6 +45,7 @@ export default class Table extends React.Component {
     this.handleBlur = this.handleBlur.bind(this);
     this.getSortedData = this.getSortedData.bind(this);
     this.getSelection = this.getSelection.bind(this);
+    this.handleRowDelete = this.handleRowDelete.bind(this);
     this.handleDoubleClick = this.handleDoubleClick.bind(this);
   }
 
@@ -206,6 +207,19 @@ export default class Table extends React.Component {
     });
   }
 
+
+  /**
+   * Callback function for deleting a row.
+   * @param {*} row
+   * @param {*} rowIndex
+   * @param {*} isSelected
+   * @param {*} event
+   */
+  handleRowDelete(row, rowIndex, isSelected, event) {
+    this.props.onDeleteRow(row.currentTarget.parentNode.attributes.getNamedItem('data-row-key').value);
+  }
+
+
   /**
    * Callback function for clicking column header.
    * Set new sort params and deselect any current selection.
@@ -257,7 +271,7 @@ export default class Table extends React.Component {
       console.error('ship-components-table sorting requires a function.');
       return this.extractData();
     }
-    let data = this.extractData().sort((a,b) => {
+    let data = this.extractData().sort((a, b) => {
       if (!this.state.sortBy.ascending) {
         let tmp = a;
         a = b;
@@ -265,7 +279,7 @@ export default class Table extends React.Component {
       }
       if (useCustomSort) {
         // for custom comparisons, pass the whole object to the programmer.
-        return compare(a,b);
+        return compare(a, b);
       }
       // for default comparison, pass in target column data.
       return compare(a[columnKey], b[columnKey]);
@@ -367,6 +381,8 @@ export default class Table extends React.Component {
               columns={this.props.columns}
               selected={this.isSelected(row)}
               onClick={this.handleRowClick}
+              onDelete={this.handleRowDelete}
+              deletable={this.props.deletable}
             />
           ))}
         </ul>
@@ -381,6 +397,7 @@ Table.defaultProps = {
   data: new List(),
   value: void 0,
   selectable: true,
+  deletable: false,
   defaultSort: {
     column: void 0,
     ascending: true
@@ -388,6 +405,7 @@ Table.defaultProps = {
   onSelect: void 0,
   onSort: void 0,
   onBlur: void 0,
+  onDeleteRow: void 0,
   dataExtractor: void 0
 };
 
@@ -404,5 +422,7 @@ Table.propTypes = {
   selectable: PropTypes.bool,
   onSelect: PropTypes.func,
   onSort: PropTypes.func,
-  onBlur: PropTypes.func
+  onBlur: PropTypes.func,
+  deletable: PropTypes.bool,
+  onDeleteRow: PropTypes.func
 };

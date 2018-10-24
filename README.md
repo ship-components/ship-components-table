@@ -180,6 +180,7 @@ Below are is a sample of how to setup the loaders:
 2. `npm test`
 
 ## History
+* 0.2.4 - Exposed Delete handler for table rows.
 * 0.2.3 - Pass whole data object to the sort function when a custom function is supplied. Use $primary-color css variable for selected row color.
 * 0.2.2 - Exposed Sort handler.
 * 0.2.1 - Exposed DoubleClick handler for table rows.
