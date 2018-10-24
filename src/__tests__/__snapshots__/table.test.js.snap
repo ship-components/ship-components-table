@@ -57,8 +57,10 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      deletable={false}
       key="1"
       onClick={[Function]}
+      onDelete={[Function]}
       row={
         Object {
           "created": "12-01-1970",
@@ -86,8 +88,10 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      deletable={false}
       key="2"
       onClick={[Function]}
+      onDelete={[Function]}
       row={
         Object {
           "created": "02-20-1997",
@@ -115,8 +119,10 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      deletable={false}
       key="3"
       onClick={[Function]}
+      onDelete={[Function]}
       row={
         Object {
           "created": "01-01-2018",
@@ -144,8 +150,10 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      deletable={false}
       key="4"
       onClick={[Function]}
+      onDelete={[Function]}
       row={
         Object {
           "created": "01-16-1989",
@@ -173,8 +181,10 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      deletable={false}
       key="5"
       onClick={[Function]}
+      onDelete={[Function]}
       row={
         Object {
           "created": "01-01-1984",
@@ -202,8 +212,10 @@ exports[`ship-components-table Table rendering renders correctly 1`] = `
           },
         }
       }
+      deletable={false}
       key="6"
       onClick={[Function]}
+      onDelete={[Function]}
       row={
         Object {
           "created": "03-14-1985",

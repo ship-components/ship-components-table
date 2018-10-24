@@ -1,6 +1,6 @@
 {
   "name": "ship-components-table",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A table with sorting and multi-selection.",
   "main": "src/Table.js",
   "scripts": {
@@ -48,6 +48,7 @@
     "ship-components-outsideclick": "^1.0.0"
   },
   "devDependencies": {
+    "ajv": "^6.5.4",
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",

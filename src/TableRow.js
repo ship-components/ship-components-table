@@ -6,7 +6,7 @@ import css from './TableRow.css';
 
 export default function DataViewRow(props) {
 
-  const {row, columns} = props;
+  const { row, columns } = props;
   const columnKeys = columns.keySeq();
   const handleClick = function handleTableRowClick(event) {
     props.onClick(row, props.rowIndex, props.selected, event);
@@ -14,7 +14,7 @@ export default function DataViewRow(props) {
   return (
     <li
       data-row-key={row.key}
-      className={classNames(css.row,{[css.selected]:props.selected})}
+      className={classNames(css.row, { [css.selected]: props.selected })}
       onClick={handleClick}
     >
       {columnKeys.map((_key) => {
@@ -29,6 +29,18 @@ export default function DataViewRow(props) {
           </div>
         );
       })}
+      {props.deletable ?
+        <button className={classNames(
+          'icon',
+          'request-button',
+          'btn',
+          'btn-flat',
+          'btn-icon-effect-loading'
+        )} type='button' onClick={props.onDelete.bind(this)}>
+          <span className={classNames('icon')}></span>
+          <span className='btn-value'><span className='icon-cross' /></span>
+        </button>
+        : null}
     </li>
   );
 }
@@ -38,7 +50,9 @@ export default function DataViewRow(props) {
  * @type    {Object}
  */
 DataViewRow.defaultProps = {
-  selected: false
+  selected: false,
+  deletable: false,
+  onDelete: void 0
 };
 
 /**
@@ -50,5 +64,7 @@ DataViewRow.propTypes = {
   rowIndex: PropTypes.number.isRequired,
   columns: PropTypes.instanceOf(OrderedMap).isRequired,
   selected: PropTypes.bool,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  deletable: PropTypes.bool,
+  onDelete: PropTypes.func
 };
