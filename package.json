@@ -1,5 +1,5 @@
 {
-  "name": "ship-components-table",
+  "name": "ship-components-table-alt",
   "version": "0.2.4",
   "description": "A table with sorting and multi-selection.",
   "main": "src/Table.js",
@@ -32,7 +32,7 @@
     "webpack",
     "jest"
   ],
-  "author": "Chris Orescan",
+  "author": "Jared Boone",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ship-components/ship-components-table/issues"
