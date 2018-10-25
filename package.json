@@ -74,7 +74,7 @@
     "jest": "^23.6.0",
     "jest-css-modules": "^1.1.0",
     "package-banner": "^0.1.1",
-    "postcss-calc": "^7.0.0",
+    "postcss-calc": "7.0.0",
     "postcss-color-function": "^4.0.0",
     "postcss-color-hex-alpha": "^5.0.2",
     "postcss-loader": "^3.0.0",
