@@ -83,7 +83,7 @@
     "prop-types": "^15.5.10",
     "raf": "^3.4.0",
     "react-dom": "^16.6.1",
-    "react-test-renderer": "^16.4.1",
+    "react-test-renderer": "^16.6.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.22.0",
     "webpack-dev-server": "^3.1.10"
