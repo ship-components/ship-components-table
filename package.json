@@ -1,6 +1,6 @@
 {
   "name": "ship-components-table",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A table with sorting and multi-selection.",
   "main": "src/Table.js",
   "scripts": {
@@ -75,7 +75,7 @@
     "jest": "^20.0.4",
     "jest-css-modules": "^1.1.0",
     "package-banner": "^0.1.1",
-    "postcss-calc": "^5.3.1",
+    "postcss-calc": "^6.0.2",
     "postcss-color-function": "^4.0.0",
     "postcss-color-hex-alpha": "^3.0.0",
     "postcss-loader": "^2.0.6",
