@@ -79,7 +79,7 @@
     "postcss-color-function": "^4.0.0",
     "postcss-color-hex-alpha": "^3.0.0",
     "postcss-loader": "^2.0.6",
-    "postcss-nested": "^2.0.2",
+    "postcss-nested": "^4.1.2",
     "postcss-simple-vars": "^4.0.0",
     "prop-types": "^15.5.10",
     "raf": "^3.4.0",
