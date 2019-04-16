@@ -1,6 +1,6 @@
 {
   "name": "ship-components-table",
-  "version": "0.2.5",
+  "version": "1.0.0",
   "description": "A table with sorting and multi-selection.",
   "main": "src/Table.js",
   "scripts": {
