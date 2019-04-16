@@ -178,6 +178,9 @@ export default class Table extends React.Component {
    */
   handleRowClick(row, rowIndex, isSelected, event) {
     if (!this.props.selectable) {
+      if (typeof this.props.onRowClick === 'function') {
+        this.props.onRowClick(row, event);
+      }
       return;
     }
 
@@ -406,7 +409,8 @@ Table.defaultProps = {
   onSort: void 0,
   onBlur: void 0,
   onDeleteRow: void 0,
-  dataExtractor: void 0
+  dataExtractor: void 0,
+  onRowClick: void 0
 };
 
 Table.propTypes = {
@@ -424,5 +428,6 @@ Table.propTypes = {
   onSort: PropTypes.func,
   onBlur: PropTypes.func,
   deletable: PropTypes.bool,
-  onDeleteRow: PropTypes.func
+  onDeleteRow: PropTypes.func,
+  onRowClick: PropTypes.func
 };
