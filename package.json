@@ -43,7 +43,7 @@
     "classnames": "^2.2.5",
     "immutable": "^3.8.1",
     "moment": "^2.21.0",
-    "react": "^16.4.1",
+    "react": "^16.10.1",
     "ship-components-icon": "^0.1.2",
     "ship-components-outsideclick": "^1.0.0"
   },
