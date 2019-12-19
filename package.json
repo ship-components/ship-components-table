@@ -59,7 +59,7 @@
     "coveralls": "^2.13.1",
     "css-loader": "^0.28.4",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-adapter-react-16": "^1.15.1",
     "enzyme-to-json": "^3.3.4",
     "eslint": "^4.1.1",
     "eslint-config-ship-components": "^1.4.2",
