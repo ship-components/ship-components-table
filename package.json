@@ -77,7 +77,7 @@
     "package-banner": "^0.1.1",
     "postcss-calc": "^6.0.2",
     "postcss-color-function": "^4.0.0",
-    "postcss-color-hex-alpha": "^3.0.0",
+    "postcss-color-hex-alpha": "^6.0.0",
     "postcss-loader": "^2.0.6",
     "postcss-nested": "^2.0.2",
     "postcss-simple-vars": "^4.0.0",
