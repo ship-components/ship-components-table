@@ -1,6 +1,6 @@
 {
   "name": "ship-components-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A table with sorting and multi-selection.",
   "main": "src/Table.js",
   "scripts": {
@@ -17,9 +17,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ship-components/ship-components-table.git"
-  },
-  "engines": {
-    "node": ">=6.0 <9.0"
   },
   "keywords": [
     "react",
